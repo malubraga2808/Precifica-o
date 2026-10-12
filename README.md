@@ -1,26 +1,19 @@
 # D’ Gourmet — Gestão & Precificação
 
-Interface completa recuperada da versão fornecida pela proprietária. Publicada pelo GitHub Pages na pasta /Precifica-o/.
+Interface completa da confeitaria, hospedada no GitHub Pages.
 
-## Funções
+## Login e banco próprios
 
-Login e cadastro, visão geral, ingredientes e histórico de preços, embalagens, fichas técnicas com impressão, simulador, produtos e variações de venda, kits, despesas, relatórios, configurações, categorias, canais de venda e backups.
+O serviço de dados é o projeto Supabase dgourmet-precificacao (kimtzxvydbnfrjumiuib), pertencente à conta da proprietária. O endereço instável do provedor anterior foi substituído. O cliente usa somente uma chave publishable pública; senhas, chaves administrativas e dados privados não estão neste repositório.
 
-## Arquivos
+Cada pessoa acessa somente seus próprios registros. database.sql descreve as 14 tabelas, chaves de propriedade, políticas RLS, inicialização de categorias e histórico de preços. O inicializador é SECURITY INVOKER e é chamado após autenticação.
 
-- index.html: entrada do sistema.
-- 404.html: permite abrir diretamente as rotas do aplicativo no GitHub Pages.
-- assets/app.js e assets/app.css: arquivos compilados recuperados da interface original. Não são o código-fonte React original.
-- legacy/: versão anterior que usava armazenamento local, preservada para recuperação.
+As contas do provedor anterior não são transferidas automaticamente: crie a conta neste site e confirme o e-mail. Os dados anteriores também precisam de um backup para restauração. Nenhum cadastro do sistema antigo foi apagado.
 
-## Autenticação e dados
+## Aplicação
 
-Esta versão usa o serviço de autenticação e o banco de dados do projeto original. As contas e dados continuam nesse serviço, não no GitHub. A senha da proprietária e os dados da conta não são armazenados neste repositório. A configuração pública de cliente utiliza somente a chave de papel anon, já presente no aplicativo original.
-
-A disponibilidade do banco continua dependendo do provedor original. Uma migração independente do banco exigirá acesso ao projeto e exportação dos dados e políticas. As sessões são separadas por endereço: é necessário entrar novamente no endereço do GitHub Pages.
+Fichas técnicas, ingredientes, embalagens, simulador, produtos e variações, kits, despesas, relatórios, canais, categorias e backups. assets/app.js e assets/app.css são os arquivos compilados recuperados. account-scope.js mantém a propriedade dos registros em gravações e restaurações. legacy/ preserva a versão local inicial.
 
 ## Publicação
 
-GitHub Pages: branch main, pasta / (root). Cada commit dispara nova publicação. O router foi adaptado ao prefixo /Precifica-o/ e o redirecionamento de confirmação de e-mail também foi ajustado para esse prefixo; permitir esse endereço nas configurações de autenticação do provedor pode ser necessário para novas contas com confirmação de e-mail.
-
-Não altere o nome do repositório sem ajustar o prefixo em index.html, 404.html e assets/app.js.
+Branch main, pasta / (root). index.html e 404.html iniciam o router com basename /Precifica-o/. O módulo possui versão na URL para atualizar o cache. Site URL e redirecionamento de confirmação no Supabase: https://malubraga2808.github.io/Precifica-o/.

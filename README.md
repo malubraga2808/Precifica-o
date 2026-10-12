@@ -1,31 +1,26 @@
 # D’ Gourmet — Gestão & Precificação
 
-Sistema de precificação em HTML, CSS e JavaScript, sem dependências de instalação.
+Interface completa recuperada da versão fornecida pela proprietária. Publicada pelo GitHub Pages na pasta /Precifica-o/.
 
-## Funcionalidades
+## Funções
 
-- Cadastro de ingredientes e embalagens com custo por medida.
-- Receitas com rendimento, mão de obra, perdas e despesas.
-- Custo por unidade, preço sugerido com margem e taxas, resultado com preço atual.
-- Exportação e importação de backup JSON.
-- Interface responsiva em creme, chocolate e caramelo.
+Login e cadastro, visão geral, ingredientes e histórico de preços, embalagens, fichas técnicas com impressão, simulador, produtos e variações de venda, kits, despesas, relatórios, configurações, categorias, canais de venda e backups.
 
-## Executar
+## Arquivos
 
-Abra index.html em um navegador moderno ou sirva esta pasta por um servidor HTTP estático.
+- index.html: entrada do sistema.
+- 404.html: permite abrir diretamente as rotas do aplicativo no GitHub Pages.
+- assets/app.js e assets/app.css: arquivos compilados recuperados da interface original. Não são o código-fonte React original.
+- legacy/: versão anterior que usava armazenamento local, preservada para recuperação.
 
-## Publicar no GitHub Pages
+## Autenticação e dados
 
-Em Settings → Pages, selecione Deploy from a branch, branch main e pasta / (root), e salve.
+Esta versão usa o serviço de autenticação e o banco de dados do projeto original. As contas e dados continuam nesse serviço, não no GitHub. A senha da proprietária e os dados da conta não são armazenados neste repositório. A configuração pública de cliente utiliza somente a chave de papel anon, já presente no aplicativo original.
 
-## Dados
+A disponibilidade do banco continua dependendo do provedor original. Uma migração independente do banco exigirá acesso ao projeto e exportação dos dados e políticas. As sessões são separadas por endereço: é necessário entrar novamente no endereço do GitHub Pages.
 
-Os dados ficam no localStorage do navegador, por endereço de site. Não há login, servidor ou sincronização entre aparelhos. Exporte um backup antes de trocar de navegador ou endereço.
+## Publicação
 
-## Escopo
+GitHub Pages: branch main, pasta / (root). Cada commit dispara nova publicação. O router foi adaptado ao prefixo /Precifica-o/ e o redirecionamento de confirmação de e-mail também foi ajustado para esse prefixo; permitir esse endereço nas configurações de autenticação do provedor pode ser necessário para novas contas com confirmação de e-mail.
 
-Esta é a versão desenvolvida no chat para D’ Gourmet. Não é uma exportação do sistema Enter/Lovable de referência, cujo código e telas internas não estavam disponíveis.
-
-## Cálculo
-
-Preço sugerido = custo por unidade / (1 - margem/100 - taxas/100). Margem e taxas devem somar menos de 100%. O resultado depende dos custos informados.
+Não altere o nome do repositório sem ajustar o prefixo em index.html, 404.html e assets/app.js.
